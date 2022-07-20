@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    position: relative; 
+}
+
+div {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    margin:auto;
+    width: 23%;
+    margin-bottom: 20px;    
+    background-color: lightblue;
+}
+
+.cell {
+    border: 2px white none;
+    width: 60px;
+    height: 60px;
+    background-color: aliceblue;
+}
+
+
