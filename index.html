@@ -7,18 +7,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100&display=swap" rel="stylesheet">
 </head>
 
 <body onload="initGame()" oncontextmenu="return false;">
-    <div class="hints-hearts"></div>
-    <div class="timer-mines">
-        <div class="mines"></div>
-        <div class="timer"></div>
-    </div>
-    <div>
-        <table>
-            <tbody class="board"></tbody>
-        </table>
+    <div class="game-container">
+        <div class="hints-hearts"></div>
+        <div class="timer-mines">
+            <div class="face" onclick="restart()"></div>
+            <div class="mines"></div>
+            <div class="timer">0</div>
+        </div>
+        <div class="difficulty">
+            <button value="4" onclick="changeLevel(this.value)">Easy</button>
+            <button value="8" onclick="changeLevel(this.value)">Normal</button>
+            <button value="12" onclick="changeLevel(this.value)">Hard</button>
+        </div>
+        <div>
+            <table>
+                <tbody class="board"></tbody>
+            </table>
+        </div>
     </div>
     <!-- <div class="footer">Project by: Yasmin Gudha</div> -->
 

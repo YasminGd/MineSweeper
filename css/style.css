@@ -2,25 +2,84 @@
     box-sizing: border-box;
 }
 
-body{
-    position: relative; 
+body {
+    position: relative;
+    font-family: 'IBM Plex Mono', monospace;
 }
 
 div {
-    display: flex;
     flex-direction: row;
     text-align: center;
-    margin:auto;
-    width: 23%;
-    margin-bottom: 20px;    
+    margin: auto;
+    width: fit-content;
+    margin-bottom: 20px;
     background-color: lightblue;
 }
 
-.cell {
-    border: 2px white none;
-    width: 60px;
-    height: 60px;
-    background-color: aliceblue;
+.game-container {
+    margin-top: 100px;
+    width: 500px;
+    height: 550px;
+    border-radius: 5px;
+}
+
+table {
 }
 
 
+.cell {
+    border: 24px white none;
+    background-color: aliceblue;
+    user-select: none;
+    /* overflow: hidden; */
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+
+}
+
+
+.cell:hover {
+    cursor: pointer;
+}
+
+.timer-mines {
+    position: relative;
+    ;
+    /* display: flex; */
+    justify-content: space-around;
+    height: 70px;
+    width: 100%;
+    align-items: stretch;
+    /* padding-top: 40px; */
+
+}
+
+.timer-mines div {
+    position: absolute;
+    height: 50px;
+    width: 90px;
+    text-align: center;
+    font-size: 35px;
+}
+
+.timer {
+    top: 30%;
+    right: 5%;
+}
+
+.mines {
+    top: 30%;
+    right: 77%
+}
+
+.face {
+    top: 30%;
+    right: 40%
+}
+
+button {
+    font-size: 20px;
+    border: none;
+    background-color: lightblue;
+}
