@@ -46,10 +46,11 @@ function renderBoard(board) {
         for (var j = 0; j < board[i].length; j++) {
             const currCell = board[i][j]
             const classStr = currCell.isShown ? ' shown' : ''
+            const minesAround = currCell.minesAround > 0 ? currCell.minesAround : ''
 
             strHTML += `\t<td class="cell${classStr}" onmousedown="CellClicked(this, ${i}, ${j}, event)" >\n`
 
-            if (currCell.isShown) strHTML += currCell.isMine ? MINE_IMG : currCell.minesAround
+            if (currCell.isShown) strHTML += currCell.isMine ? MINE_IMG : minesAround
             else if (currCell.isMarked) strHTML += MARKED_IMG
 
             strHTML += '\t</td>\n'
@@ -106,6 +107,63 @@ function displayHearts() {
     elHeartsDisplay.innerText = hearts
 }
 
+function expandShown(pos) {
+    for (var i = pos.i - 1; i <= pos.i + 1; i++) {
+        if (i < 0 || i >= gBoard.length) continue
+        for (var j = pos.j - 1; j <= pos.j + 1; j++) {
+            if (j < 0 || j >= gBoard[pos.i].length) continue
+            var currCell = gBoard[i][j]
+            if (!currCell.isShown && !currCell.isMarked) {
+                currCell.isShown = true
+                gGame.shownCount++
+            }
+        }
+    }
+    renderBoard(gBoard)
+}
+
+// function expandShown(pos) {
+//     for (var i = pos.i - 1; i <= pos.i + 1; i++) {
+//         if (i < 0 || i >= gBoard.length) continue
+//         for (var j = pos.j - 1; j <= pos.j + 1; j++) {
+//             if (j < 0 || j >= gBoard[pos.i].length) continue
+//             var currCell = gBoard[i][j]
+//             if (!currCell.isShown && !currCell.isMarked) {
+//                 currCell.isShown = true
+//                 gGame.shownCount++
+//             }
+//         }
+//     }
+//     renderBoard(gBoard)
+// }
+
+function expandShown(pos) {
+    if (pos.i < 0 || pos.i > gBoard.length ||
+        pos.j < 0 || pos.j > gBoard[0].length) return
+
+    for (var i = pos.i - 1; i <= pos.i + 1; i++) {
+        if (i < 0 || i >= gBoard.length) continue
+        for (var j = pos.j - 1; j <= pos.j + 1; j++) {
+            if (j < 0 || j >= gBoard[pos.i].length) continue
+            if (pos.i === i && pos.j === j) continue
+            var currCell = gBoard[i][j]
+            if (currCell.isShown) continue
+            if (currCell.minesAround !== 0) {
+                currCell.isShown = true
+                gGame.shownCount++
+                continue
+            }
+            if (!currCell.isMine) {
+                currCell.isShown = true
+                gGame.shownCount++
+                console.log(i, j);
+                expandShown({ i, j })
+            }
+        }
+    }
+}
+
+
 function checkGameOver() {
     const numberCellsAmount = Math.pow(gLevel.SIZE, 2) - gLevel.MINES
     const heartsUsed = 3 - gGame.hearts
@@ -129,21 +187,6 @@ function defeat() {
 
     renderBoard(gBoard)
 
-}
-
-function expandShown(pos) {
-    for (var i = pos.i - 1; i <= pos.i + 1; i++) {
-        if (i < 0 || i >= gBoard.length) continue
-        for (var j = pos.j - 1; j <= pos.j + 1; j++) {
-            if (j < 0 || j >= gBoard[pos.i].length) continue
-            var currCell = gBoard[i][j]
-            if (!currCell.isShown && !currCell.isMarked) {
-                currCell.isShown = true
-                gGame.shownCount++
-            }
-        }
-    }
-    renderBoard(gBoard)
 }
 
 function changeLevel(size) {
