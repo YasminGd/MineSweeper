@@ -16,20 +16,20 @@ div {
     height: 580px;
     border-radius: 10px;
     background-color: lightblue;
-
 }
 
 .cell {
-    background-color: aliceblue;
-    border-radius: 5px;
     width: 30px;
     height: 30px;
+    border-radius: 5px;
+    background-color: aliceblue;
 }
 
-.cell:hover {
-    background-color: rgb(230, 230, 230);
+.difficulty,
+.timer-mines {
+    display: flex;
+    gap: 70px;
 }
-
 
 .timer-mines {
     padding-top: 20px;
@@ -42,38 +42,7 @@ div {
     width: 90px;
 }
 
-.face:hover,
-.cell:hover,
-button:hover {
-    cursor: pointer;
-}
-
-.difficulty,
-.timer-mines {
-    display: flex;
-    gap: 70px;
-}
-
-button {
-    font-size: 20px;
-    border: none;
-    background-color: Transparent;
-    margin: 30px 0 30px 0;
-}
-
-.footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    text-align: left;
-    padding-left: 15px;
-    font-weight: bold;
-    background-color: lightblue;
-}
-
 .hints-hearts {
-    /* margin-top: 20px; */
     position: relative;
     height: 70px;
     width: 500px;
@@ -86,6 +55,43 @@ button {
     right: 80%;
 }
 
+button {
+    font-size: 20px;
+    border: none;
+    background-color: transparent;
+    margin: 30px 0 20px 0;
+    padding: 10px;
+}
+
+.safe-click {
+        margin: 5px;
+}
+
+.face:hover,
+.cell:hover,
+button:hover {
+    cursor: pointer;
+}
+
+.cell:hover {
+    background-color: rgb(230, 230, 230);
+}
+
 .shown {
     background-color: rgb(230, 230, 230);
+}
+
+.safe {
+    background-color: #ffe003
+}
+
+.footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 30px;
+    width: 100%;
+    text-align: left;
+    padding-left: 15px;
+    background-color: lightblue;
 }
