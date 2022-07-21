@@ -1,85 +1,91 @@
 * {
     box-sizing: border-box;
-}
-
-body {
-    position: relative;
+    user-select: none;
     font-family: 'IBM Plex Mono', monospace;
+    font-weight: 700;
+    text-align: center;
 }
 
 div {
-    flex-direction: row;
-    text-align: center;
     margin: auto;
     width: fit-content;
-    margin-bottom: 20px;
-    background-color: lightblue;
 }
 
 .game-container {
-    margin-top: 100px;
     width: 500px;
-    height: 550px;
-    border-radius: 5px;
-}
+    height: 580px;
+    border-radius: 10px;
+    background-color: lightblue;
 
-table {
 }
-
 
 .cell {
-    border: 24px white none;
     background-color: aliceblue;
-    user-select: none;
-    /* overflow: hidden; */
     border-radius: 5px;
     width: 30px;
     height: 30px;
-
 }
-
 
 .cell:hover {
-    cursor: pointer;
+    background-color: rgb(230, 230, 230);
 }
+
 
 .timer-mines {
-    position: relative;
-    ;
-    /* display: flex; */
-    justify-content: space-around;
+    padding-top: 20px;
     height: 70px;
     width: 100%;
-    align-items: stretch;
-    /* padding-top: 40px; */
-
-}
-
-.timer-mines div {
-    position: absolute;
-    height: 50px;
-    width: 90px;
-    text-align: center;
     font-size: 35px;
 }
 
-.timer {
-    top: 30%;
-    right: 5%;
+.timer-mines div {
+    width: 90px;
 }
 
-.mines {
-    top: 30%;
-    right: 77%
+.face:hover,
+.cell:hover,
+button:hover {
+    cursor: pointer;
 }
 
-.face {
-    top: 30%;
-    right: 40%
+.difficulty,
+.timer-mines {
+    display: flex;
+    gap: 70px;
 }
 
 button {
     font-size: 20px;
     border: none;
+    background-color: Transparent;
+    margin: 30px 0 30px 0;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: left;
+    padding-left: 15px;
+    font-weight: bold;
     background-color: lightblue;
+}
+
+.hints-hearts {
+    /* margin-top: 20px; */
+    position: relative;
+    height: 70px;
+    width: 500px;
+}
+
+.hearts {
+    position: absolute;
+    font-size: 25px;
+    top: 40%;
+    right: 80%;
+}
+
+.shown {
+    background-color: rgb(230, 230, 230);
 }

@@ -1,3 +1,5 @@
+'use strict'
+
 function buildBoard() {
     gBoard = []
 
@@ -49,13 +51,10 @@ function drawEmptyCell() {
     return emptyCell[0]
 }
 
-function getClassName(location) {
-    var cellClass = `cell-${location.i}-${location.j}`;
-    return cellClass;
-}
-
 function getRandomInt(min, max) {
     min = Math.ceil(min)
     max = Math.floor(max)
     return Math.floor(Math.random() * (max - min) + min)
 }
+
+
