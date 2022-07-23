@@ -9,7 +9,8 @@ function buildBoard() {
             const cell = {
                 isShown: false,
                 isMine: false,
-                isMarked: false
+                isMarked: false,
+                isShownTemp: false
             }
             row.push(cell)
         }

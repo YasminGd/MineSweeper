@@ -13,14 +13,14 @@ div {
 
 .game-container {
     width: 500px;
-    height: 580px;
+    height: 650px;
     border-radius: 10px;
     background-color: lightblue;
 }
 
 .cell {
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     border-radius: 5px;
     background-color: aliceblue;
 }
@@ -48,11 +48,17 @@ div {
     width: 500px;
 }
 
-.hearts {
+.hints-hearts div {
     position: absolute;
-    font-size: 25px;
     top: 40%;
-    right: 80%;
+}
+
+.hearts {
+    right: 76%;
+}
+
+.hints {
+    left: 75%;
 }
 
 button {
@@ -64,7 +70,7 @@ button {
 }
 
 .safe-click {
-        margin: 5px;
+    margin: 5px;
 }
 
 .face:hover,
@@ -82,7 +88,7 @@ button:hover {
 }
 
 .safe {
-    background-color: #ffe003
+    background-color: #fff395
 }
 
 .footer {
@@ -94,4 +100,8 @@ button:hover {
     text-align: left;
     padding-left: 15px;
     background-color: lightblue;
+}
+
+img {
+    height: 40px;
 }
