@@ -5,10 +5,10 @@ const MARKED_IMG = '🚩'
 const HAPPY_FACE = '😃'
 const SAD_FACE = '😞'
 const COOL_FACE = '😎'
-const HEART = '../img/heart.png'
-const HEART_LOST = '../img/heart_lost.png'
-const HINT = '../img/hint_icon.png'
-const HINT_ON = '../img/hint_on.png'
+const HEART = 'img/heart.png'
+const HEART_LOST = 'img/heart_lost.png'
+const HINT = 'img/hint_icon.png'
+const HINT_ON = 'img/hint_on.png'
 
 const gLevel = {
     SIZE: 4,
